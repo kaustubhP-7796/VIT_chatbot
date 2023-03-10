@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>VIT Bot</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/vit1.png') }}" type="image" sizes="16x16">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/ionicons.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Login-Form-Dark.css') }}">
+
+</head>
+
+<body>
+  <section class="msger">
+   
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!--a class="navbar-brand" href="#">CRCE Bot</a-->
+        <a class="navbar-brand" href="#" style="color: white;">
+          &emsp;<i class="fas fa-graduation-cap"></i> <b> &nbsp; VIT BOT &emsp; </b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item active"><a class="nav-link" href="/index">Home</a></li>
+
+            
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModalScrollable" href="#"> About Us </a>
+             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">Suggestion box</a>
+            </li>
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Suggestion box</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action='/suggestion' method='POST'>
+                      <div class="form-group">
+                        <input type="email" name='uemail' class='form-control' placeholder="Email" required>
+                        <br>
+                        <textarea class="form-control" id="message-text" placeholder="Enter your suggestion..." name="message" required></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="Submit" class="btn btn-primary" data-target="#alert">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">VIT BOT </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                   <h3>About Us</h3>
+                   <div><img src="data:image/jpeg;base64,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" width = "500" height = "250" align = "center"></div>
+                    <br> <br>
+                   <p style="text-align: justify;">Vishwakarma Institute of Technology, Pune, a highly commendable private institute, occupies a place of pride amongst the premier technical institutes of the western region of India. Established in the year 1983, financed and run by the Bansilal Ramnath Agrawal Charitable Trust, Pune. It is affiliated to the University of Pune . Within three decades, the institute marched towards the pinnacle of glory through its remarkable achievements and laurels in the field of engineering education of high calibre. According to Indian history, 'Vishwakarma' is a divine architect-engineer. It is believed that He fashioned this world with His rare engineering skills. The Trust adopted this name with a vision to develop engineers of high calibre, who could take up challenges of any type of engineering job and become successful in the chosen career. 
+ 
+                    <p style="text-align: justify;">The campus spread over 6.5 acres of land, boasts of lush green lawns that provide an ambience and a serene atmosphere of ancient Gurukuls far from the madding crowd. </p>
+                    
+                    <p style="text-align: justify;">Vishwakarma Institute of Technology hereafter called, as ‘The Institute’ is one of the leading autonomous Institutes permanently affiliated to Savitribai Phule Pune University . It was started in 1983 with an objective to impart quality technical education for the overall development of students and the latest need of Society in general and Industry in particular. 
+
+                    </br>
+                     > The Institute is running 9 under graduate, 3 post-graduate & 3 Ph.D. Programme which are affiliated to the University of Pune.
+                    </br>
+                     > The Institution was selected under the world bank project TEQIP Phase- I i.e. Technical Education Quality Improvement Programme by Ministry of HRD, New Delhi.
+                    </br>
+                     > The Institution is ISO 21001:2018 certified by Quality Austria Central Asia, India.
+                    </br>
+                     > The Institute has been granted autonomous status since academic year 2008-09 and has autonomous status upto 2030.
+                    </br>
+                     > The Institute was accredited ('A++' Grade ) by National Assessment and Accreditation Council (NAAC), Bangalore from November 2018 for the next five years.</p>
+                    </br>
+
+                    <p style="text-align: justify;">Based on the Outcome-based Education (OBE) parameters and criteria, three programmes of the Institute have been accredited by National Board of Accreditation (NBA-India) for a period of three years valid until June 2022.</p>
+
+                    <p style="text-align: justify;">The Institute has been consistently ranked highly in major surveys like the NIRF, TOI, INDIA TODAY to name a few. The college is ranked among the top 300 Engineering institutes of the country by NIRF 2020, conducted by MHRD. Based on the Outcome-Based Education (OBE) parameters and criteria, three programmes of the institute have been accredited by the National Board of Accreditation (NBA-India) form 2017. The current accreditation is valid until June 2023. The college is also a NAAC accredited. In addition, the Institute has been consistently ranked highly by reputed surveys like TOI, India Today, The Week, Education World to name a few.</p>
+
+
+                    <h3>Contact Us</h3>
+                    
+                    <ul>
+                    
+                    <li style = "margin-left:15px"><b>Vishwakarma Institute of Technology</b> </br>666, Upper Indiranagar, Bibwewadi, Pune, Maharashtra, INDIA - 411 037.</li>
+                    </br>
+                    <li style = "margin-left:15px">+91 - 20 - 2428 3001
+                    </br>
+                    For Admission :- 91 - 9359207819 / 9373920122
+                  </br>
+                    For Admission :-  Office Timing :-
+                     
+                    Monday to Friday - 10am to 5 pm
+                     
+                    Saturday - 10am to 3pm </li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+            
+          </ul>
+        </div>
+    
+   
+    </nav>
+    <!--header class="msger-header">
+      <div class="msger-header-title">
+        <h5><i class="fas fa-graduation-cap"></i> <b> &emsp; CRCE BOT &emsp; </b><i class="fas fa-graduation-cap"></i></h5>
+      </div>
+    </header-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible" id="alert" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>{{ message }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+   
+   
+    <main class="msger-chat" style="color: white;">
+    </br>
+      <div class="msg left-msg">       
+        <div class="msg-img" style = "background-image: url(https://upload.wikimedia.org/wikipedia/en/f/f0/Vishwakarma_Institute_of_Technology.png)">
+        </div>
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name"><b>VIT BOT</b> </div>
+          </div>      
+              
+          <div class="msg-text" style="color: white;">
+            <b >Hi there, Welcome to Vishwakarma Institute Of Technology! 👋 If you need any assistance, I'm always here.
+          </div>
+        </div>
+      </div> 
+      <div class="msg left-msg">       
+        <div class="msg-img" style = "background-image: url(https://upload.wikimedia.org/wikipedia/en/f/f0/Vishwakarma_Institute_of_Technology.png)">
+        </div>
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name"> <b>VIT BOT</b></div>
+          </div>      
+              
+          <div class="msg-text" style="color: white;">
+           Which of the following user groups do you belong to?
+            
+              <br><br>1.&emsp;Student's Section Enquiry.</br>2.&emsp;Faculty Section Enquiry. </br>3.&emsp;Parent's Section Enquiry.</br>4.&emsp;Visitor's Section Enquiry.</br>
+    
+        </div>               
+          
+        </div>
+      </div>
+
+    </main>
+
+    <form class="msger-inputarea">
+      <input type="text" class="msger-input" id="textInput" placeholder="Enter your enquiry number...">
+      <button type="submit" class="msger-send-btn">Send</button>
+    </form>
+  </section>
+  <!-- partial -->
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+
+    $("#alert").delay(3000).slideUp(200, function() {
+    $(this).alert('close');
+    });
+
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+    
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "https://upload.wikimedia.org/wikipedia/en/f/f0/Vishwakarma_Institute_of_Technology.png";
+    const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+    const BOT_NAME = "VIT Bot";
+    const PERSON_NAME = "You";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+      <div class="msg-info-time">${formatDate(new Date())}</div>
+    </div>
+
+    <div class="msg-text">${text}</div>
+  </div>
+</div>
+`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function botResponse(rawText) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+
+      });
+
+    }
+
+
+    // Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
